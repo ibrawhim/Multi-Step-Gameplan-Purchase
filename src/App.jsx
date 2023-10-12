@@ -2,8 +2,13 @@ import './index.css'
 import Steppers from './components/Steppers'
 import PersonalInfo from './pages/PersonalInfo'
 import AddOn from './pages/AddOn'
+import { useSelector } from 'react-redux'
 
 function App() {
+
+  const currentIndex = useSelector(state => state.planData.currentStep)
+  console.log(currentIndex);
+
 
   return (
     <>
@@ -12,8 +17,16 @@ function App() {
           <Steppers/>
         </div>
           <div className='w-[70%]'>
-            <PersonalInfo/>
-            {/* <AddOn/> */}
+          {/* <PersonalInfo /> */}
+          {currentIndex === 0 &&
+            (<PersonalInfo />
+            )}
+            {currentIndex === 1 &&
+            (<Selectplan />
+            )}
+          {currentIndex === 2 &&
+            (<AddOn />
+            )}
           </div>
       </div>
     </>

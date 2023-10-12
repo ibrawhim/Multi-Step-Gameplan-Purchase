@@ -34,3 +34,4 @@ export const slice = createSlice({
 })
 
 export const {handleNextStep} = slice.actions
+export default slice.reducer

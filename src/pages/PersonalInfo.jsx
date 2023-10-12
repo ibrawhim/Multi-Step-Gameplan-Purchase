@@ -2,8 +2,13 @@ import React from 'react'
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import { handleNextStep } from '../redux/plan'
+import { useDispatch, useSelector } from 'react-redux'
+
 
 const PersonalInfo = () => {
+  const store = useSelector((state) => state)
+  console.log(store);
 
 const schema = yup
   .object({
@@ -21,7 +26,13 @@ const schema = yup
   } = useForm({
     resolver: yupResolver(schema),
   })
-  const onSubmit = (data) => console.log(data)
+  
+  const dispatch = useDispatch()
+  const onSubmit = (data) => {
+    let form = {...store, ...data}
+    console.log(form);
+    dispatch(handleNextStep(form))
+  }
 
 
   return (
