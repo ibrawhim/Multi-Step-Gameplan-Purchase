@@ -1,16 +1,42 @@
 import React from 'react'
 
-const Steppers = () => {
-  return (
-    <>
-    <div className='bg-sky-300 flex lg:flex-col lg:py-0 py-5  items-center lg:h-full'>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-    </div>
-    </>
-  )
+const Steppers = ({ currentIndex }) => {
+
+    <h1>hello</h1>
+    const steps = [
+        "Your Info",
+        "Select Plan",
+        "Add-Ons",
+        "Summary"
+    ]
+    return (
+        <>
+
+            <div className='bg-sky-300 h-full'>
+                {/* <div>
+                    {
+                        steps.map((item, i) => (
+                          ))
+                          
+                        }
+                </div> */}
+
+                <div className='steps flex lg:flex-col justify-center lg:items-center'>
+                    {
+                      steps.map((item, i) => (
+                        <div key={i} className='flex py-5 lg:w-40'>
+                                <div className={`${currentIndex === i ? 'bg-white' : ''} w-[35px] text-center flex justify-center items-center mt-1 border h-[35px] rounded-full me-2`}>{i + 1}</div>
+                                <div className='sm:hidden lg:block text-center'>
+                                <div className='step1'>STEP{i + 1}</div>
+                                <div>{item}</div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default Steppers
