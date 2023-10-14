@@ -15,12 +15,11 @@ function App() {
 
   return (
     <>
-      <div className='flex border lg:w-[70%] mx-auto w-[60%] lg:mt-10 justify-between lg:flex-row flex-col'>
+      <div className='flex border font-sans-serif lg:h-[90vh] shadow lg:mx-20 lg:mt-10 justify-between lg:flex-row flex-col'>
         <div className='lg:w-[30%] w-100'>
           <Steppers currentIndex={currentIndex}/>
         </div>
-          <div className='w-[70%]'>
-          {/* <PersonalInfo /> */}
+          <div className='flex justify-center lg:mx-0 mx-10 px-5 shadow py-10 shadow  lg:w-[70%] lg:h-[100vh] h-[50vh]'>
           {currentIndex === 0 &&
             (<PersonalInfo />
             )}

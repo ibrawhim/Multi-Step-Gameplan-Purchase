@@ -21,13 +21,13 @@ const Steppers = ({ currentIndex }) => {
                         }
                 </div> */}
 
-                <div className='steps flex lg:flex-col justify-center lg:items-center'>
+                <div className='steps flex lg:flex-col justify-center lg:items-center py-8'>
                     {
                       steps.map((item, i) => (
                         <div key={i} className='flex py-5 lg:w-40'>
                                 <div className={`${currentIndex === i ? 'bg-white' : ''} w-[35px] text-center flex justify-center items-center mt-1 border h-[35px] rounded-full me-2`}>{i + 1}</div>
-                                <div className='sm:hidden lg:block text-center'>
-                                <div className='step1'>STEP{i + 1}</div>
+                                <div className='hidden lg:block text-center'>
+                                <div className='step1 font-bold'>STEP{i + 1}</div>
                                 <div>{item}</div>
                                 </div>
                             </div>

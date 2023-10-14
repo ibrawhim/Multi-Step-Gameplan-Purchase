@@ -37,23 +37,23 @@ const schema = yup
 
   return (
     <>
-    <div className=' lg:px-14 flex justify-center items-center lg:sm-0 sm-20'>
+    <div className=' lg:px-14 flex'>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h1>Personal Info</h1>
+        <h1 className='font-bold py-5 text-xl'>Personal Info</h1>
         <p>Please provide your name, email address and phone number.</p>
         <div className='py-5'>
           <label htmlFor="">Name</label><br />
-          <input className='lg:w-full w-[70%] border border-black py-2 rounded' {...register("firstName")} />
+          <input className='w-full  border border-black py-2 rounded' {...register("firstName")} />
           <p>{errors.firstName?.message}</p>
         </div>
         <div className='py-5'>
           <label htmlFor="">Email Address</label><br />
-          <input className='lg:w-full w-[70%] border border-black py-2 rounded' {...register("age")} />
+          <input className='w-full  border border-black py-2 rounded' {...register("age")} />
           <p>{errors.age?.message}</p>
         </div>
         <div className='py-5'>
           <label htmlFor="">Phone</label><br />
-          <input className='lg:w-full w-[70%] border border-black py-2 rounded' {...register("age")} />
+          <input className='w-full  border border-black py-2 rounded' {...register("age")} />
           <p>{errors.age?.message}</p>
 
         </div>
