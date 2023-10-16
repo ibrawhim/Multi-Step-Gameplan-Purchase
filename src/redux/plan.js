@@ -1,9 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit'
 
-const initialData = () => {
-    const item = window.localStorage.getItem('subscription')
 
-    return item ? JSON.parse(item) : {
+const initialData =()=>   {
+
+const item = window.localStorage.getItem('subscription')
+
+return item ? JSON.parse(item) : {
         currentStep: 0,
         
         Name: '',
@@ -17,10 +19,11 @@ const initialData = () => {
         addOnTypes: [],
         addOnTotalAmount: 0
     }
+
 }
 
 export const slice = createSlice({
-    name: 'plan',
+    name: 'gameplan',
     initialState: {
         planData: initialData()
     },
@@ -30,8 +33,24 @@ export const slice = createSlice({
             state.planData.currentStep++
             localStorage.setItem("subscription", JSON.stringify(state.planData))
         },
+
+        handlePlanLength: (state, action) =>{
+            state.planData.planLength = action.payload 
+        },
+
+        handlePreviousStep: (state, action)=> {
+            state.planData.currentStep--
+        },
+
+        handleChange: (state, action)=> {
+            state.planData.currentStep = 1
+        },
+
+        handleConfirm: (state, action)=> {
+          state.planData.currentStep++  
+        }
     }
 })
+export const  {handleNextStep, handlePlanLength, handlePreviousStep, handleChange, handleConfirm} = slice.actions
 
-export const {handleNextStep} = slice.actions
 export default slice.reducer
