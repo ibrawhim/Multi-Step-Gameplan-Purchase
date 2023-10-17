@@ -19,7 +19,7 @@ function App() {
         <div className='lg:w-[30%] w-100'>
           <Steppers currentIndex={currentIndex}/>
         </div>
-          <div className='flex justify-center lg:mx-0 mx-10 px-5 shadow py-10 shadow  lg:w-[70%] lg:h-[100vh] h-[50vh]'>
+          <div className='flex justify-center lg:mx-0 mx-10 px-5 shadow py-10 shadow  lg:w-[70%] lg:h-[100vh] h-[55vh]'>
           {currentIndex === 0 &&
             (<PersonalInfo />
             )}

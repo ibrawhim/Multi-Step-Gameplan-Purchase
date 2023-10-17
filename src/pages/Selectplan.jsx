@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { handleNextStep } from '../redux/plan'
+import { handleNextStep, handlePreviousStep } from '../redux/plan'
 import { useDispatch, useSelector } from 'react-redux'
 import {SiApplearcade}  from 'react-icons/si'
 import {IoLogoGameControllerA} from 'react-icons/io'
@@ -70,14 +70,14 @@ const Selectplan = () => {
         <div>
             <h1 className='text-2xl font-bold lg:py-4 py-2'>Select your plan</h1>
             <p>You have the option of monthly or yearly billing.</p>
-            <div className='grid lg:grid-cols-3 gap-5 md:grid-cols-4 grid-cols-1'>
+            <div className='grid lg:grid-cols-3 gap-2 md:grid-cols-4 grid-cols-1'>
               {
                 availablePlan.map((item,i)=>(
-                      <button key={i} className='border flex lg:flex-col lg:gap-0 gap-5 lg:h-[160px] h-[70px] w-full lg:w-[120px] rounded-xl px-2'>
+                      <button key={i} className='border flex lg:flex-col lg:gap-0 gap-5 lg:h-[160px] h-[70px] w-full lg:w-[120px] rounded-xl px-2' onClick={() => updateForm(i)}>
                         <div className={item.bg} style={{marginTop: '12px', marginLeft: '5px', borderRadius: '100%', padding: '10px'}}>{item.image}</div>
                         <div className='lg:mt-6'>
                           <div className='flex'>{item.name}</div>
-                          <div className='flex'>{formData?.isYearPlanLength ? item.yearly + '$' : item.monthly + '$'}/ {formData?.isYearPlanLength ? "year" : "month"}</div>
+                          <div className='flex lg:mb-5'>{formData?.isYearPlanLength ? item.yearly + '$' : item.monthly + '$'}/ {formData?.isYearPlanLength ? "year" : "month"}</div>
                         {formData.isYearPlanLength && <span className="yeartype">2 months free</span>}
                         </div>
                       </button>
@@ -96,7 +96,7 @@ const Selectplan = () => {
 
             </div>
 
-            <div className='lg:flex flex lg:gap-0 gap-[120px] mt-10'>
+            <div className='lg:flex flex justify-between lg:gap-0 gap-[120px] mt-10'>
                 <button className='text-xl' onClick={handlePrevious}>Back</button>
                 <button onClick={handleSubmit} className='bg-blue-800 text-white rounded lg:ms-96 ms-26 lg:mt-0 lg:p-3 p-2 lg:w-[25%] w-[105px]'>CONFIRM</button>
             </div>

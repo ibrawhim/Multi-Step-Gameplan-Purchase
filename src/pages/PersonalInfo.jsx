@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
@@ -6,27 +6,32 @@ import { handleNextStep } from '../redux/plan'
 import { useDispatch, useSelector } from 'react-redux'
 
 
-const PersonalInfo = () => {
-  const store = useSelector((state) => state)
-  console.log(store);
 
-const schema = yup
+const PersonalInfo = () => {
+  const store = useSelector((state) => state.planData)
+
+  const schema = yup
+
   .object({
     firstName: yup.string().required(),
     age: yup.number().positive().integer().required(),
   })
   .required()
-
-
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  })
   
+  const {register, handleSubmit, setValue, formState: { errors },} = useForm({ resolver: yupResolver(schema), })
+
+
+  useEffect(() => {
+        if (store) {
+            setValue("Name", store.Name)
+            setValue("Email", store.Email)
+            setValue("Phone", store.Phone)
+        }
+    }, [])
+
+
+
+
   const dispatch = useDispatch()
   const onSubmit = (data) => {
     let form = {...store, ...data}
