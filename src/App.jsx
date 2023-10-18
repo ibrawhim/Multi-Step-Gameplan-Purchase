@@ -1,7 +1,7 @@
 import './index.css'
 import Steppers from './components/Steppers'
 import PersonalInfo from './pages/PersonalInfo'
-import AddOn from './pages/AddOn'
+import Addon from './pages/Addon'
 import { useSelector } from 'react-redux'
 import Summary from './pages/Summary'
 import Selectplan from './pages/Selectplan'
@@ -27,7 +27,7 @@ function App() {
             (<Selectplan/>
             )}
           {currentIndex === 2 &&
-            (<AddOn />
+            (<Addon />
             )}
           {currentIndex === 3 &&
             (<Summary/>)
