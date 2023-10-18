@@ -14,13 +14,6 @@ const Steppers = ({ currentIndex }) => {
         <>
 
             <div className='.steppers'>
-                {/* <div>
-                    {
-                        steps.map((item, i) => (
-                          ))
-                          
-                        }
-                </div> */}
 
                 <div className='steps flex lg:flex-col justify-center lg:items-center py-8'>
                     {
