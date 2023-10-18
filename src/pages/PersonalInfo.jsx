@@ -51,17 +51,17 @@ const PersonalInfo = () => {
         <div className='py-2'>
           <label htmlFor="">Name</label><br />
           <input className='w-full  border border-black py-2 rounded' {...register("Name")} />
-          <p className='text-sm'>{errors.Name?.message}</p>
+          <p className='text-red-500'>{errors.Name?.message}</p>
         </div>
         <div className='py-2'>
           <label htmlFor="">Email Address</label><br />
           <input className='w-full  border border-black py-2 rounded' {...register("Email")} />
-          <p>{errors.Email?.message}</p>
+          <p className='text-red-500'>{errors.Email?.message}</p>
         </div>
         <div className='py-2'>
           <label htmlFor="">Phone</label><br />
           <input className='w-full  border border-black py-2 rounded' {...register("Phone")} />
-          <p>{errors.Phone?.message}</p>
+          <p className='text-red-500'>{errors.Phone?.message}</p>
 
         </div>
         <button className='bg-[#921445] p-2 rounded text-white' type='submit'>Submit</button>
