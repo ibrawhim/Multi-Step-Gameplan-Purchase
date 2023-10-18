@@ -17,3 +17,9 @@ body {  font-family: "Ubuntu", sans-serif;
 }
 .check input:checked + span:before {  left: 24px;}
 /* .free {  margin-top: 10px;} */
+.steppers {
+  background-image: url('./assets/image/rose.svg');
+  background-repeat: no-repeat;
+  height: 100%;
+  background-size: cover;
+}

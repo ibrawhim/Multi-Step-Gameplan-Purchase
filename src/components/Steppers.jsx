@@ -1,4 +1,5 @@
 import React from 'react'
+import '../index.css'
 
 const Steppers = ({ currentIndex }) => {
 
@@ -12,7 +13,7 @@ const Steppers = ({ currentIndex }) => {
     return (
         <>
 
-            <div className='bg-sky-300 h-full'>
+            <div className='.steppers'>
                 {/* <div>
                     {
                         steps.map((item, i) => (
@@ -25,7 +26,7 @@ const Steppers = ({ currentIndex }) => {
                     {
                       steps.map((item, i) => (
                         <div key={i} className='flex py-5 lg:w-40'>
-                                <div className={`${currentIndex === i ? 'bg-white' : ''} w-[35px] text-center flex justify-center items-center mt-1 border h-[35px] rounded-full me-2`}>{i + 1}</div>
+                                <div className={`${currentIndex === i ? 'bg-white text-black' : ''} w-[35px] text-center text-white flex justify-center items-center mt-1 border h-[35px] rounded-full me-2`}>{i + 1}</div>
                                 <div className='hidden lg:block text-center'>
                                 <div className='step1 font-bold'>STEP{i + 1}</div>
                                 <div>{item}</div>
