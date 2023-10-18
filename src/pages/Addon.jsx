@@ -94,7 +94,7 @@ const Addon = () => {
                 ))
             }
 
-            <div className='lg:flex justify-center flex lg:gap-0 gap-[120px] mt-10'>
+            <div className='lg:flex justify-between flex lg:gap-0 gap-[120px] mt-10'>
                 <button className='text-xl' onClick={handlePrevious}>Back</button>
                 <button onClick={handleSubmit} className='bg-[#921445] text-white rounded lg:ms-96 ms-26 lg:mt-0 lg:p-3 p-2 lg:w-[25%] w-[105px]'>CONFIRM</button>
             </div>

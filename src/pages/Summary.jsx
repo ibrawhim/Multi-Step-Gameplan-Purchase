@@ -85,12 +85,12 @@ const Summary = () => {
                     }
                 </div>
             </div>
-            <div className="flex lg:ms-10 mt-5">
-                <p className='font-bold text-2xl'>Total</p>
-                <span className="lg:ms-80 font-bold ms-40 text-2xl">${summary?.addOnTotalAmount + summary?.planAmount}</span>
+            <div className="flex justify-end gap-4 mt-5">
+                <p className='font-bold'>Total =</p>
+                <span className="font-semibold border border-2 border-black">${summary?.addOnTotalAmount + summary?.planAmount}</span>
             </div>
 
-            <div className='lg:flex flex lg:gap-0 gap-[120px] mt-10'>
+            <div className='lg:flex flex justify-between lg:gap-0 gap-[120px] mt-10'>
                 <button className='text-xl' onClick={handlePrevious}>Back</button>
                 <button onClick={handleNext} className='bg-[#921445] text-white rounded lg:ms-96 ms-26 lg:mt-0  p-2 lg:w-[25%] w-[105px]'>CONFIRM</button>
             </div>
