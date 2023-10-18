@@ -28,8 +28,8 @@ const Steppers = ({ currentIndex }) => {
                         <div key={i} className='flex py-5 lg:w-40'>
                                 <div className={`${currentIndex === i ? 'bg-white text-black' : ''} w-[35px] text-center text-white flex justify-center items-center mt-1 border h-[35px] rounded-full me-2`}>{i + 1}</div>
                                 <div className='hidden lg:block text-center'>
-                                <div className='step1 font-bold'>STEP{i + 1}</div>
-                                <div>{item}</div>
+                                <div className='step1 font-bold text-white'>STEP{i + 1}</div>
+                                <div className='text-white'>{item}</div>
                                 </div>
                             </div>
                         ))

@@ -64,7 +64,7 @@ const PersonalInfo = () => {
           <p>{errors.Phone?.message}</p>
 
         </div>
-        <button className='bg-black text-white' type='submit'>Submit</button>
+        <button className='bg-[#921445] p-2 rounded text-white' type='submit'>Submit</button>
       </form>
     </div>
     </>

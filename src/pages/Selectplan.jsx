@@ -3,7 +3,7 @@ import { handleNextStep, handlePreviousStep } from '../redux/plan'
 import { useDispatch, useSelector } from 'react-redux'
 import {SiApplearcade}  from 'react-icons/si'
 import {IoLogoGameControllerA} from 'react-icons/io'
-import {GrGamepad}  from 'react-icons/gr'
+import {LiaGamepadSolid}  from 'react-icons/lia'
 import '../index.css'
 
 
@@ -37,7 +37,7 @@ const Selectplan = () => {
           name: 'Pro',
           monthly: 15,
           yearly: 150,
-          image: <GrGamepad/>,
+          image: <LiaGamepadSolid/>,
           bg: 'bg-blue-500'
         },
       ])
@@ -74,7 +74,7 @@ const Selectplan = () => {
               {
                 availablePlan.map((item,i)=>(
                       <button key={i} className={`border flex lg:flex-col lg:gap-0 lg:h-[160px] cursor-pointer h-[70px] w-full lg:w-full rounded-xl px-2 hover:border-black ${item.name === formData.planType ? 'border-black border-1' : ''}` } onClick={() => updateForm(i)}>
-                        <div className={item.bg} style={{marginTop: '12px', marginLeft: '5px', borderRadius: '100%', padding: '10px'}}>{item.image}</div>
+                        <div className={item.bg} style={{marginTop: '12px', marginLeft: '5px', borderRadius: '100%', padding: '10px', color:'white'}}>{item.image}</div>
                         <div className='lg:mt-6'>
                           <div className='flex'>{item.name}</div>
                           <div className='flex lg:mb-5'>{formData?.isYearPlanLength ? item.yearly + '$' : item.monthly + '$'}/ {formData?.isYearPlanLength ? "year" : "month"}</div>
@@ -98,7 +98,7 @@ const Selectplan = () => {
 
             <div className='lg:flex flex justify-between lg:gap-0 gap-[120px] mt-10'>
                 <button className='text-xl' onClick={handlePrevious}>Back</button>
-                <button onClick={handleSubmit} className='bg-blue-800 text-white rounded lg:ms-96 ms-26 lg:mt-0 lg:p-3 p-2 lg:w-[25%] w-[105px]'>CONFIRM</button>
+                <button onClick={handleSubmit} className='bg-[#921445] text-white rounded lg:ms-96 ms-26 lg:mt-0  p-2 lg:w-[25%] w-[105px]'>CONFIRM</button>
             </div>
         </div>
     </>
