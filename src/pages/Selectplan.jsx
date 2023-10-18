@@ -74,7 +74,7 @@ const Selectplan = () => {
               {
                 availablePlan.map((item,i)=>(
                       <button key={i} className={`border flex lg:flex-col lg:gap-0 lg:h-[160px] cursor-pointer h-[70px] w-full lg:w-full rounded-xl px-2 hover:border-black ${item.name === formData.planType ? 'border-black border-1' : ''}` } onClick={() => updateForm(i)}>
-                        <div className={item.bg} style={{marginTop: '12px', marginLeft: '5px', borderRadius: '100%', padding: '10px', color:'white'}}>{item.image}</div>
+                        <div className={item.bg} style={{marginTop: '12px', marginLeft: '5px', marginRight: '5px', borderRadius: '100%', padding: '10px', color:'white'}}>{item.image}</div>
                         <div className='lg:mt-6'>
                           <div className='flex'>{item.name}</div>
                           <div className='flex lg:mb-5'>{formData?.isYearPlanLength ? item.yearly + '$' : item.monthly + '$'}/ {formData?.isYearPlanLength ? "year" : "month"}</div>

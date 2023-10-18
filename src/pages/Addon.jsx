@@ -46,7 +46,7 @@ const Addon = () => {
     }
 
     const handleSubmit = () => {
-        const { addOnTypes } = addOn
+        const {addOnTypes} = addOn
         if (addOnTypes) {
             dispatch(handleNextStep(addOn))
         }
@@ -79,8 +79,8 @@ const Addon = () => {
                         <div className={`addOnButton flex justify-between border items-center mt-6 py-2 rounded-xl ${addOn?.addOnTypes?.some(val => val.id === item.id) && 'active'}`}>
 
 
-                            <div className="flex">
-                                <input type="checkbox" className='ml-10' checked={addOn.addOnTypes.some(val => val.id === item.id)} id={`addon${item.id}`}
+                            <div className="flex mx-2">
+                                <input type="checkbox" className='lg:ml-10 ml-4' checked={addOn.addOnTypes.some(val => val.id === item.id)} id={`addon${item.id}`}
                                     name="addOn" onChange={(e) => handleChange(item, item.id)} />
                             </div>
 
