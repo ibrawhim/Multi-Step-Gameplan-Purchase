@@ -92,7 +92,7 @@ const Summary = () => {
 
             <div className='lg:flex flex justify-between lg:gap-0 gap-[120px] mt-10'>
                 <button className='text-xl' onClick={handlePrevious}>Back</button>
-                <button onClick={handleNext} className='bg-[#921445] text-white rounded lg:ms-96 ms-26 lg:mt-0  p-2 lg:w-[25%] w-[105px]'>CONFIRM</button>
+                <button onClick={handleNext} className='bg-[#921445] text-white rounded lg:ms-96 ms-26 lg:mt-0  p-2 lg:w-[25%] w-[105px]'>Confirm</button>
             </div>
         </div>
         </>
